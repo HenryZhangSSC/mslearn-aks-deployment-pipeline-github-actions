@@ -38,7 +38,7 @@ jobs:
          version: v3.3.1
          
       - name: Get AKS Credentials
-        uses: Azure/aks-set-context@v1
+        uses: Azure/aks-set-context@v3
         with:
           # Azure credentials, i.e., output of `az ad sp create-for-rbac --scopes /subscriptions/<SUBSCRIPTION-ID> --role Contributor --sdk-auth`
           # creds: ${{ secrets.AZURE_CREDENTIALS }}
