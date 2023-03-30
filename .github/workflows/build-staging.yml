@@ -41,12 +41,13 @@ jobs:
         uses: Azure/aks-set-context@v1
         with:
           # Azure credentials, i.e., output of `az ad sp create-for-rbac --scopes /subscriptions/<SUBSCRIPTION-ID> --role Contributor --sdk-auth`
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+          # creds: ${{ secrets.AZURE_CREDENTIALS }}
           # Resource group name
           resource-group: mslearn-gh-pipelines-16029
           # AKS cluster name
           cluster-name: contoso-video
-          
+          admin: 'false'
+          use-kubelogin: 'true'          
       - name: Run Helm Deploy
         run: |
           helm upgrade \
